@@ -17,7 +17,33 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "AddressBook.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AddressBookUI.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": "false",
                             "count": 1
                         }
                     ]
@@ -27,13 +53,16 @@
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.redditapp411428"
+            "PACKAGE_NAME": "com.ionicframework.contacts_app411428"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.redditapp411428"
+            "PACKAGE_NAME": "com.ionicframework.contacts_app411428"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "com.ionicframework.contacts_app411428"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.redditapp411428"
+            "PACKAGE_NAME": "com.ionicframework.contacts_app411428"
         }
     },
     "dependent_plugins": {}
