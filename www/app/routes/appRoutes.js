@@ -24,25 +24,15 @@ angular.module('app').config([
         resolve: {
           appState: [
             '$q',
-            '$ionicPlatform',
-            function($q, $ionicPlatform) {
+            function($q) {
               var deferred = $q.defer();
 
               document.addEventListener('deviceready', function() {
-                alert('got 2 here');
 
                 deferred.resolve({
                   ready: true
                 });
               }, true);
-
-              // $ionicPlatform.ready(function() {
-              //   alert('got 2 here');
-
-              //   deferred.resolve({
-              //     ready: true
-              //   });
-              // });
 
               return deferred.promise;
             }

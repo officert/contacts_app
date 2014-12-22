@@ -1,3 +1,15 @@
 <div id="home">
-  <h1 style="color:white;">Hello</h1>
+  <br>
+  <div class="alert alert-danger" ng-show="errMsg">
+    {{ errMsg }}
+  </div>
+  <div ng-hide="errMsg">
+    <ion-list can-swipe="listCanSwipe">
+      <ion-item ng-repeat="contact in contacts">
+        <h2>{{contact.name.givenName}} {{contact.name.familyName}}</h2>
+        <p ng-repeat="email in contact.emails">{{ email.value }}</p>
+        <p ng-repeat="phoneNumber in contact.phoneNumbers">{{ phoneNumber.value }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
 </div>

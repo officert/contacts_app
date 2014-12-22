@@ -1,24 +1,21 @@
 angular.module('app').controller('homeCtrl', [
   '$scope',
   'contactsService',
-  'geolocationService',
-  function($scope, contactsService, geolocationService) {
+  '$ionicLoading',
+  '$timeout',
+  function($scope, contactsService, $ionicLoading, $timeout) {
     'use strict';
 
-    contactsService.find('tim').then(function success(contact) {
-      alert(contact);
-    }, function(error) {
-      alert(error);
-    });
+    $ionicLoading.show();
 
-    // contactsService.create({
-    //   name: 'Tim Officer',
-    //   displayName: 'Tim',
-    //   phoneNumbers: ['6033599135']
-    // }).then(function success(contact) {
-    //   alert(contact);
-    // }, function error(error) {
-    //   alert(error);
-    // });
+    contactsService.find('').then(function success(contacts) {
+      $scope.contacts = _.sortBy(contacts, 'name.familyName');
+      $timeout(function() {
+        $ionicLoading.hide();
+      }, 1000);
+    }, function(error) {
+      $scope.alert('There was an error getting your contacts');
+      $ionicLoading.hide();
+    });
   }
 ]);
